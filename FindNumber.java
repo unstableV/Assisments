@@ -1,3 +1,4 @@
+//Date-27-01-2020
 import java.util.Scanner;
 class FindNumber{
 
