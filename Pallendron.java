@@ -8,16 +8,13 @@ class Pallindron
         String str= sc.nextLine();
         StringBuilder str1 = new StringBuilder(str);
         System.out.println(str1.reverse().toString());
-        if(comapreTo(str1,str)==1)
+        if(str1.toString().equals(str4.toString()))
         {
         	System.out.println("String is palendron");
         }
         else
         {
-        	System.out.println("sTRING IS NOT PALLENDRON");
+        	System.out.println("STRING IS NOT PALLENDRON");
         }
 	}
-
-
-
 }
