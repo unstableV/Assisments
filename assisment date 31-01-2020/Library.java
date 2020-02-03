@@ -113,7 +113,6 @@ public class Library{
 		System.out.println("Enter the Director name ");
 		String dic = sc.nextLine(); 
 		String gen1 = sc.nextLine();
-		//System.out.println("sbvxhsdbcdse ");
 		System.out.println("Enter the generic");
 		String gen = sc.nextLine();
 		System.out.println("Enter the time");
