@@ -1,5 +1,5 @@
 import java.util.Scanner;
-class NumberIncrement{
+class NumberInc{
 
 	public static void main(String[] args) {
 	Scanner sc= new Scanner(System.in);
