@@ -1,4 +1,4 @@
-package com.cg.eis.exception;
+package Salary;
 class EmployeeException extends Exception {
 
 	    void age()
