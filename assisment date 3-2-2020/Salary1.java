@@ -1,4 +1,4 @@
-import com.cg.eis.exception;
+import Salary;
 import java.util.Scanner;
 class Salary1{
 public static void main(String[] args) {
