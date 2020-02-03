@@ -1,5 +1,5 @@
 import java.util.Scanner;
-class NumberInc{
+class NumberIncrement{
 
 	public static void main(String[] args) {
 	Scanner sc= new Scanner(System.in);
@@ -15,8 +15,6 @@ class NumberInc{
  int value1 = n%10;
  n=n/10;
  int value2 = n%10;
- //System.out.println(value1+" "+value2);
- n=n/10;
 if(value1 > value2)
  {
  flag = 1;
