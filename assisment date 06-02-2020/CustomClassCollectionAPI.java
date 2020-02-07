@@ -4,13 +4,10 @@
 // 4. Delete a computer : By ID
 // 5. UPdate Computer Details: Name, Color, HDDSize, RamSize
 
-
 import java.util.*;
 class CustomClassCollectionAPI{
     public static void main(String[] args) {
- 
         Computer first = new Computer("hp", "black", 500, 8,100);
-
         ArrayList<Computer> list = new ArrayList<Computer>();
         list.add(first);
         list.add(new Computer("HP", "black", 256, 4,101));
@@ -42,7 +39,6 @@ class CustomClassCollectionAPI{
             list.add(new Computer(newComp, color, n1, n2,id));
             System.out.println("Computer added successfully!!");
             break;
-
             case 2:
             System.out.println("List : " + list);
             break;
@@ -54,7 +50,6 @@ class CustomClassCollectionAPI{
             System.out.println("For Search by Id press 5 ");
             Scanner s3 = new Scanner(System.in);
             int search = s3.nextInt();
-         //  int  flag =0;
             if(search == 1)
             {
                 System.out.println("Ente the brand name");
@@ -64,7 +59,6 @@ class CustomClassCollectionAPI{
                 Computer first2 = new Computer(brand, "hii", 1, 2,1);
                 for(int i=0;i<list.size();i++)
                 {
-
                 if(first2.equals1(list.get(i)))
                 {
 
@@ -75,8 +69,7 @@ class CustomClassCollectionAPI{
                 if(flag==0)
                 {
                     System.out.println("Sorry not found");
-                }
-                
+                }           
             }
             if(search == 2)
             {
@@ -92,14 +85,11 @@ class CustomClassCollectionAPI{
                     flag=1;
                     System.out.println(list.get(i));
                 }
-
-                
                }
                if(flag==0)
                 {
                     System.out.println("Sorry not found");
                 }
-
             }
              if(search == 3)
             {
@@ -109,7 +99,6 @@ class CustomClassCollectionAPI{
                 Computer first4 = new Computer("ss", "aaa", size, 2,1);
                 for(int i=0;i<list.size();i++)
                 {
-
                 if(first4.equals3(list.get(i)))
                 {
                     flag=1;
@@ -129,7 +118,6 @@ class CustomClassCollectionAPI{
                 Computer first5 = new Computer("ss", "aaa", 2, ram,1);
                 for(int i=0;i<list.size();i++)
                 {
-
                 if(first5.equals4(list.get(i)))
                 {
                     flag=1;
@@ -141,7 +129,6 @@ class CustomClassCollectionAPI{
                 }
                }
             }
-
             if(search == 5)
             {
                 System.out.println("Ente the id");
@@ -150,14 +137,11 @@ class CustomClassCollectionAPI{
                 Computer first6 = new Computer("ss", "aaa", 2, 1,id1);
                 for(int i=0;i<list.size();i++)
                 {
-
                 if(first6.equals5(list.get(i)))
                 {
                     flag=1;
                     System.out.println(list.get(i));
                 }
-
-                
                }
                if(flag==0)
                 {
@@ -174,14 +158,12 @@ class CustomClassCollectionAPI{
             {
                 if(first6.equals5(list.get(i)))
                 {
-
                     list.remove(i);
                     System.out.println("id removes sucessfully");
                 }
             }
             break;
             case 5:
-
             System.out.println("For UPdate by name press 1 ");
             System.out.println("For UPdate by color press 2 ");
             System.out.println("For UPdate by HDDSize press 3 ");
@@ -198,7 +180,6 @@ class CustomClassCollectionAPI{
                 //Computer comp = null; 
                 for(int i=0;i<list.size();i++)
                 {
-
                 if(first21.equals1(list.get(i)))
                 {
                     System.out.println("enter the brad name to replace");
@@ -222,7 +203,6 @@ class CustomClassCollectionAPI{
                 Computer first21 = new Computer("sss", color12, 1, 2,1);
                 for(int i=0;i<list.size();i++)
                 {
-
                 if(first21.equals2(list.get(i)))
                 {
                     System.out.println("enter the color to replace");
@@ -246,7 +226,6 @@ class CustomClassCollectionAPI{
                 Computer first211 = new Computer("sss", "sss", hrdd12, 2,1); 
                 for(int i=0;i<list.size();i++)
                 {
-
                 if(first211.equals3(list.get(i)))
                 {
                     System.out.println("enter the hdrdd to replace");
@@ -262,7 +241,6 @@ class CustomClassCollectionAPI{
                     System.out.println("Sorry not found");
                 }     
             }
-
             if(search1 == 4)
             {
                 System.out.println("Ente the ramSize");
@@ -271,7 +249,6 @@ class CustomClassCollectionAPI{
                 Computer first211 = new Computer("sss", "sss", 1, ram12,1); 
                 for(int i=0;i<list.size();i++)
                 {
-
                 if(first211.equals4(list.get(i)))
                 {
                     System.out.println("enter the ransize to replace");
@@ -295,7 +272,6 @@ class CustomClassCollectionAPI{
                 Computer first2111 = new Computer("sss", "sss", 1, 2,id12);
                 for(int i=0;i<list.size();i++)
                 {
-
                 if(first2111.equals5(list.get(i)))
                 {
                     System.out.println("enter the id to replace");
@@ -311,7 +287,6 @@ class CustomClassCollectionAPI{
                     System.out.println("Sorry not found");
                 }     
             }
-        
     }
 }
  }
@@ -319,7 +294,6 @@ class CustomClassCollectionAPI{
 class Computer{
     String brand, color;
     int hddSize, ramSize,id;
- 
     Computer(String brand, String color, int hddSize, int ramSize,int id){
         this.brand = brand;
         this.color = color;
@@ -327,11 +301,9 @@ class Computer{
         this.ramSize = ramSize;
         this.id = id;
     }
- 
     public String getColor(){
         return this.color;
     }
-     
     public Integer getId()
     {
         return this.id;
@@ -339,16 +311,12 @@ class Computer{
     public String getBrand(){
         return this.brand;
     }
- 
     public Integer getHddSize(){
         return this.hddSize;
     }
-     
     public Integer getRamSize(){
         return this.ramSize;
     }
-
- 
     @Override
     public String toString(){
         return "Computer : (" + this.getBrand()
@@ -358,37 +326,27 @@ class Computer{
             + ", " + this.getId()+
             ")";
     }
-   // @Override
     public boolean equals1(Object ref){
- 
         if(ref instanceof Computer)
             return this.getBrand().equals(((Computer)ref).getBrand());
         return false;
     }
-   // @Override
     public boolean equals2(Object ref){
- 
         if(ref instanceof Computer)
             return this.getColor().equals(((Computer)ref).getColor());
         return false;
     }
-    
     public boolean equals3(Object ref){
- 
         if(ref instanceof Computer)
             return this.getHddSize().equals(((Computer)ref).getHddSize());
         return false;
     }
-
     public boolean equals4(Object ref){
- 
         if(ref instanceof Computer)
             return this.getRamSize().equals(((Computer)ref).getRamSize());
         return false;
     }
-
     public boolean equals5(Object ref){
- 
         if(ref instanceof Computer)
             return this.getId().equals(((Computer)ref).getId());
         return false;
