@@ -62,7 +62,7 @@ public class WalletDatabase implements WalletDatabaseInterface{
 		return b;
 	}
 	@Override
-	public void deposit(Customer cust, int amt) {
+	public void deposit( Customer cust,int amt) {
 		String updateQry = "UPDATE userdetails SET balance=? WHERE userID=?";
 
 		try {
@@ -81,8 +81,7 @@ public class WalletDatabase implements WalletDatabaseInterface{
 	}
 	@Override
 	public void withdraw(int amt, Customer cus) {
-		String updateQry = "UPDATE userdetails SET balance=? WHERE userID=?";
-		
+		String updateQry = "UPDATE userdetails SET balance=? WHERE userID=?";	
 		try {
 			PreparedStatement stmt = dbCon.prepareStatement(updateQry);
 			
@@ -100,16 +99,21 @@ public class WalletDatabase implements WalletDatabaseInterface{
 		}
 	}
 	@Override
-	public void fundTransfer(String fromUserID, String toUserID, int amt, String date) {
-		boolean b = new WalletService().withdraw(amt, fromUserID);
+	public void fundTransfer(Customer cust, int amt, String date) {
+		//System.out.println("hoo");
+		boolean b = new WalletService().withdraw(amt, cust);
+		WalletDatabase s = new WalletDatabase();
+		s.withdraw(amt,cust);
 		if(b == true) {
-			deposit(amt, toUserID);
+			WalletDatabase s1 = new WalletDatabase();
+			s1.deposit( cust,amt);
+		
 			try {
 				String insertQry = "INSERT INTO transactiondetails(fromUserID, toUserID, amount, transactionTime) values (?, ?, ?, ?)";
 				PreparedStatement stmt = dbCon.prepareStatement(insertQry);
 				
-				stmt.setString(1, fromUserID);
-				stmt.setString(2, toUserID);
+				stmt.setString(1, cust.getUserID());
+				stmt.setString(2, cust.getRecieptID());
 				stmt.setInt(3, amt);
 				stmt.setString(4, date);
 				stmt.executeUpdate();
@@ -149,6 +153,11 @@ public class WalletDatabase implements WalletDatabaseInterface{
 	}
 	@Override
 	public void withdraw(int amt, String userID) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void fundTransfer(String fromID, String toID, int amt, String date) {
 		// TODO Auto-generated method stub
 		
 	}

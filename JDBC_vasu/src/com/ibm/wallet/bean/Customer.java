@@ -3,7 +3,13 @@ package com.ibm.wallet.bean;
 public class Customer {
 	
 	int balance;
-	String userName, userID, phoneNumber;
+	String userName, userID, phoneNumber,recieptID;
+	public String getRecieptID() {
+		return recieptID;
+	}
+	public void setRecieptID(String recieptID) {
+		this.recieptID = recieptID;
+	}
 	public int getBalance() {
 		return balance;
 	}

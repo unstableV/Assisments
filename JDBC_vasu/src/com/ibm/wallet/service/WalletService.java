@@ -33,7 +33,7 @@ public class WalletService implements WalletServiceInterface{
 		return b;
 	}
 	@Override
-	public void fundTransfer(String fromUserID, String toUserID, int amt, Date date) {
+	public void fundTransfer(Customer cust, int amt, Date date) {
 		String pattern = "MM/dd/yyyy HH:mm:ss";
 
 		DateFormat df = new SimpleDateFormat(pattern);
@@ -41,7 +41,8 @@ public class WalletService implements WalletServiceInterface{
 		Date today = Calendar.getInstance().getTime();        
 
 		String todayAsString = df.format(today);
-		wd.fundTransfer(fromUserID, toUserID, amt, todayAsString);
+		//System.out.println("hoo");
+		wd.fundTransfer(cust, amt, todayAsString);
 	}
 	@Override
 	public ResultSet printTransactions(String userID) {
@@ -61,5 +62,10 @@ public class WalletService implements WalletServiceInterface{
 	public boolean withdraw(int amt, String userID) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+	@Override
+	public void fundTransfer(String fromUserID, String toUserID, int amt, Date date) {
+		// TODO Auto-generated method stub
+		
 	}
 }

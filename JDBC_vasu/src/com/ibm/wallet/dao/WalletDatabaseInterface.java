@@ -15,4 +15,5 @@ public interface WalletDatabaseInterface {
 	void createAccount(Customer cust);
 	void deposit(Customer cust, int amt);
 	void withdraw(int amt, Customer cus);
+	void fundTransfer(Customer cust, int amt, String date);
 }

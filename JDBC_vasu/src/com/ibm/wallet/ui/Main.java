@@ -46,6 +46,7 @@ public class Main {
 					System.out.println("Enter the amount to be deposited: ");
 					amt = sc.nextInt();
 					ws.deposit(cust,amt);
+					System.out.println("Deposite sucessfully");
 					break;
 				case 3:
 					System.out.println("Enter your User ID: ");
@@ -56,17 +57,21 @@ public class Main {
 					System.out.println("Enter the amount to be withdrawn: ");
 					amt = sc.nextInt();
 					ws.withdraw(amt, cust);
+					System.out.println("Widhrawl sucessfully");
 					break;
 				case 4:
 					System.out.println("Enter your User ID: ");
 					sc.nextLine();
 					fromUserID = sc.nextLine();
+					cust = new Customer();
+					cust.setUserID(fromUserID);
 					System.out.println("Enter your Recipient User ID: ");
 					toUserID = sc.nextLine();
+					cust.setRecieptID(toUserID);
 					System.out.println("Enter the amount to be transferred: ");
 					amt = sc.nextInt();
 					Date date = Calendar.getInstance().getTime();
-					ws.fundTransfer(fromUserID, toUserID, amt, date);
+					ws.fundTransfer(cust, amt, date);
 					break;
 				case 5:
 					System.out.println("Enter your User ID: ");

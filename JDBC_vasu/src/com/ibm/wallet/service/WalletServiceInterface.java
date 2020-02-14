@@ -15,4 +15,5 @@ public interface WalletServiceInterface {
 	
 	void deposit(Customer cust, int amt);
 	boolean withdraw(int amt, Customer cus);
+	void fundTransfer(Customer cust, int amt, Date date);
 }
